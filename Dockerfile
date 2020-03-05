@@ -1,5 +1,6 @@
-FROM python:2.7-onbuild
-
-EXPOSE 80
-
-ENTRYPOINT ["python", "/usr/src/app/hello-world.py"]
+FROM python:3.7
+MAINTAINER suraj
+WORKDIR /usr/src/app
+ARG DB_ENV
+ENV DB_ENV ${DB_ENV}
+COPY requirements.txt ./
